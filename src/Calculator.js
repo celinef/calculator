@@ -1,8 +1,6 @@
 import React from 'react';
 import './Calculator.css';
 
-/* If 2 or more operators consecutively, use last operator (excluding the negative (-) sign). 5 + * 7 = 35, yet 5 * - 5 = -25
-EXAMPLE: 3 + 5 x 6 - 2 / 4 = 11.5*/ 
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +23,6 @@ class Calculator extends React.Component {
     this.setState({display: this.state.display, buffer: this.state.buffer + operator, operatorsUsed: this.state.operatorsUsed+1});         
   }
   calculate() {
-    //need loop
     let consecutiveOperatorsArr = this.state.buffer.match(/[+\-*/]{2,}/g);
     let consecutiveOperators = "";
     let sanitizedBuffer="";
